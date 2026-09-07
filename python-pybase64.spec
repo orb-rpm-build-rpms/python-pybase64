@@ -12,6 +12,9 @@ Source:         %{pypi_source pybase64}
 
 BuildRequires:  python3-devel
 BuildRequires:  gcc
+# pybase64 builds a bundled C base64 library via cmake from setup.py; without
+# it the C extension is silently skipped, leaving an empty debugsource %files.
+BuildRequires:  cmake
 
 
 # Fill in the actual package description to submit package to Fedora
